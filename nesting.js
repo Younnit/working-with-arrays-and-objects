@@ -51,16 +51,18 @@ var employees = [
 */
 
 //Code Here
-function employeeUpdater(){
-  for(let key in employees){
-    if(employees.firstName === 'Theo'){
-      delete employees[key]
-    }else if(employees.firstName === 'Lorie'){
-      employees.department = 'HR'
+const employeeUpdater = (() => {
+  for(let i = 0; i < employees.length; i++){
+    for(let j = 0; j < employees[i].length; j++){
+      if(employees[i].firstName === 'Theo'){
+        delete employees[i]
+      }else if(employees[i].firstName === 'Lorie'){
+        employees[i].department = 'HR'
+      }
     }
   }
   return employees
-}
+}) 
 
 
 ////////// PROBLEM 2 //////////
@@ -106,8 +108,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 
 
 
@@ -167,5 +169,16 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
+function looper(){
+  for(let i = 0; i < numsArr.length; i++){
+    for(let j = 0; j < numsArr[i].length; j++){
+      if(j % 2 === 1){
+        j = 'odd'
+      }else{
+        j = 'even'
+      }
+    }
+  }
+  return numsArr
+}
 
