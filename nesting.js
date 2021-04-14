@@ -53,12 +53,10 @@ var employees = [
 //Code Here
 const employeeUpdater = (() => {
   for(let i = 0; i < employees.length; i++){
-    for(let j = 0; j < employees[i].length; j++){
-      if(employees[i].firstName === 'Theo'){
-        delete employees[i]
-      }else if(employees[i].firstName === 'Lorie'){
-        employees[i].department = 'HR'
-      }
+    if(employees[i].firstName === 'Theo'){
+      employees.splice(i, 1)
+    }else if(employees[i].firstName === 'Lorie'){
+      employees[i].department = 'HR'
     }
   }
   return employees
